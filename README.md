@@ -2,6 +2,7 @@
 
 Quanto può essere lungo e noioso cercare se una serie di domini sono già stati presi? 
 Con questo script python il controllo risulta rapido ed efficiente, sfruttando un sito di domini, chiamato [GoDaddy](https://it.godaddy.com/) e le sue API.
+Tutto quello che devi fare è modificare il file [domains.txt](https://github.com/fillics/CheckDomain/blob/main/domains.txt), con la serie di domini che vuoi che lo script controlli e il gioco è fatto. Verrà creato un file con tutti quei domini che sono disponibili.
 <hr>
 
 ## Features
