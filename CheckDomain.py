@@ -31,7 +31,7 @@ choice = int(input("Text file [1] or Json file [2]? "))
 
 
 if choice == 1:
-	with open ('11000_general_names.txt', 'rt') as filetxt:  # Open lorem.txt for reading
+	with open ('domains.txt', 'rt') as filetxt:  
 	    for name in filetxt:              					# For each line, read to a string,
 	        CheckDomain(name.lower().rstrip())
 	        
