@@ -14,4 +14,6 @@ Con questo script python il controllo risulta rapido ed efficiente, sfruttando u
 * [GoDaddy API Keys](https://developer.godaddy.com/keys)
 
 ## Come funziona
-Per prima cosa, registrarsi al sito di [GoDaddy API](https://developer.godaddy.com/) per ottenere le chiavi di accesso per lo script. Una volta ottenute, sostituirle nel file (
+Per prima cosa, registrarsi al sito di [GoDaddy API](https://developer.godaddy.com/) per ottenere le chiavi di accesso per lo script. Una volta ottenute, sostituirle nel file [credentials.py](https://github.com/fillics/CheckDomain/blob/main/credentials.py). 
+
+Dopodichè, 
