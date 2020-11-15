@@ -15,8 +15,8 @@ Tutto quello che devi fare è modificare il file [domains.txt](https://github.co
 * [GoDaddy API Keys](https://developer.godaddy.com/keys)
 
 ## Come funziona
-Per prima cosa, registrarsi al sito di [GoDaddy API](https://developer.godaddy.com/) per ottenere le chiavi di accesso per lo script. Una volta ottenute, sostituirle nel file [credentials.py](https://github.com/fillics/CheckDomain/blob/main/credentials.py). 
-
+1) Registrarsi al sito di [GoDaddy API](https://developer.godaddy.com/) per ottenere le chiavi di accesso per lo script. 2) Sostituirle nel file [credentials.py](https://github.com/fillics/CheckDomain/blob/main/credentials.py). 
+3) Modificare file _domains.txt_ con i domini che si vogliono controllare (non aggiungere il .com, ma semplicemente digitare il nome del sito. Esempio: _provadominio_ )
 Dopo aver modificato il file _domains.txt_ con i domini che si vogliono controllare, far partire lo script con il comando, da terminale, `python CheckDomain.py`.
 A quel punto, il programma chiederà all'utente di inserire una preferenza riguardo al file da prendere in ingresso, con il comando ```choice = int(input("Text file [1] or Json file [2]? "))```.
 Dopo aver scelto, lo script eseguirà una **request get** dopo l'altra, attraverso il sito di GoDaddy API, per trovare il dominio che ha _True_ come attributo _available_ del response body della request.
