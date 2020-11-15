@@ -9,9 +9,9 @@ Tutto quello che devi fare è modificare il file [domains.txt](https://github.co
 * Possibilità di scegliere una lista di domini da un file .json (esempio: [animal.json](https://github.com/fillics/CheckDomain/blob/main/animals.json), array di nomi presi da questo [link](https://gist.github.com/borlaym/585e2e09dd6abd9b0d0a)) oppure da un file di testo (esempio: [domains.txt](https://github.com/fillics/CheckDomain/blob/main/domains.txt), che contiene migliaia di nomi generati casualmente, che possono essere modificati) che può modificare/creare l'utente.
 * Creazione di un file di testo con tutti i domini disponibili, direttamente nella cartella dello script .py.
 
-## Requisiti
-* Python (3 o superiore)
-* Moduli requests, json: scaricabili con ```pip install requests``` e ```pip install json```
+## Prequisiti
+* Python (3 o superiore): installare [Python](https://www.python.org/downloads/windows/) e, se si è su Windows, aggiungerlo al PATH di Windows ((guida)[https://datatofish.com/add-python-to-windows-path/]) 
+* Moduli requests, json: scaricabili con ```pip install requests``` e ```pip install ijson```
 * [GoDaddy API Keys](https://developer.godaddy.com/keys)
 
 ## Come funziona
