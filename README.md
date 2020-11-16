@@ -15,7 +15,7 @@ Tutto quello che devi fare è modificare il file [domains.txt](https://github.co
 * [GoDaddy API Keys](https://developer.godaddy.com/keys)
 
 ## Come funziona
-1) Registrarsi al sito di [GoDaddy API](https://developer.godaddy.com/) per ottenere le chiavi di accesso per lo script.
+1) Registrarsi al sito di [GoDaddy API](https://developer.godaddy.com/) per creare le chiavi di accesso per lo script.
 
 ![Immagine](https://user-images.githubusercontent.com/24494773/99223251-73936b80-27e4-11eb-9b17-930e354574e0.png)
 
