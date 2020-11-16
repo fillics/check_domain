@@ -10,8 +10,8 @@ Tutto quello che devi fare è modificare il file [domains.txt](https://github.co
 * Creazione di un file di testo con tutti i domini disponibili, direttamente nella cartella dello script .py.
 
 ## Prequisiti
-* Python (3 o superiore): installare [Python](https://www.python.org/downloads/windows/) e, se si è su Windows, aggiungerlo al PATH di Windows ([guida](https://datatofish.com/add-python-to-windows-path/)) 
-* Moduli requests, json: scaricabili con ```pip install requests``` e ```pip install ijson```
+* Python (3 o superiore): installare [Python](https://www.python.org/downloads/windows/) e, se si è su Windows, aggiungerlo al PATH ([guida](https://datatofish.com/add-python-to-windows-path/)) 
+* Moduli [requests](https://pypi.org/project/requests/), json: scaricabili con ```pip install requests``` e ```pip install ijson```
 * [GoDaddy API Keys](https://developer.godaddy.com/keys)
 
 ## Come funziona
