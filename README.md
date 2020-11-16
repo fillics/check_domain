@@ -16,6 +16,8 @@ Tutto quello che devi fare è modificare il file [domains.txt](https://github.co
 
 ## Come funziona
 1) Registrarsi al sito di [GoDaddy API](https://developer.godaddy.com/) per ottenere le chiavi di accesso per lo script.
+![Immagine](https://user-images.githubusercontent.com/24494773/99223251-73936b80-27e4-11eb-9b17-930e354574e0.png)
+
 2) Sostituire le chiavi ottenute nel file [credentials.py](https://github.com/fillics/CheckDomain/blob/main/credentials.py). 
 3) Modificare file _domains.txt_ con i domini che si vogliono controllare (non aggiungere il .com, ma semplicemente digitare il nome del sito. Esempio: _provadominio_ )
 Dopo aver modificato il file _domains.txt_ con i domini che si vogliono controllare, far partire lo script con il comando, da terminale, `python CheckDomain.py`.
