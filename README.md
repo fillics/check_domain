@@ -2,11 +2,11 @@
 Check out the availability of a list of domains.
 
 ## What is it?
-Do you want to know if a domain .com is available? With this script, you could find out the availability of a domain or a list of domains, saved in a JSON file or a text file.
+Do you want to know if a domain .com is available? With this script, you can find out the availability of a domain or a list of domains, saved in a JSON file or a text file.
 
 ## Telegram BOT
 I've also created a Telegram bot ([@CheckDomainAPI_bot](https://web.telegram.org/#/im?p=%40CheckDomainAPI_bot)) that does the same thing of [CheckDomain.py](CheckDomain.py) script. 
-You can send to it a JSON/txt file or just texting the domain to check out.
+You can send to it a JSON/txt file or just texting the domain to check it out.
 
 ## Technologies
 This script is created with:
@@ -23,7 +23,7 @@ This script is created with:
 After that, the script asks you which file to open, with the command line: 
 ``` choice = int(input("Text file [1] or Json file [2]? ")) ```
 
-5) The script opens the file and reads the domains' name and for each domain, it executes a **request get**, one by one, throught the GoDaddy API.
+5) The script opens the file and reads the domains' name and for each domain it executes a **request get**, one by one, throught the GoDaddy API.
 6) If the domain is available, it will save in a text file, called AvailableWebsites.txt, with the command line: 
 
 ```
