@@ -26,3 +26,5 @@ After that, the script asks you which file to open, with the command line:
 f = open('AvailableWebsites.txt', 'w')
 f.write(name+'.com is available\r\n')
 ```
+<hr>
+## Telegram BOT
