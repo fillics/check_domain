@@ -4,7 +4,7 @@ Check out the availability of a list of domains.
 ## What is it?
 Do you want to know if a domain .com is available? With this script, you could find out the availability of a domain or a list of domains, saved in a JSON file or a text file.
 
-### Telegram BOT
+## Telegram BOT
 I've also created a Telegram bot ([@CheckDomainAPI_bot](https://web.telegram.org/#/im?p=%40CheckDomainAPI_bot)) that does the same thing of [CheckDomain.py](CheckDomain.py) script. 
 You can send to it a JSON/txt file or just texting the domain to check out.
 
