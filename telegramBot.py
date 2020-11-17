@@ -2,7 +2,6 @@ import sys, time, telepot, json
 from telepot.loop import MessageLoop
 from pprint import pprint
 import requests
-from bs4 import BeautifulSoup
 from credentials import API_KEY, API_SECRET, TOKEN
 
 def handle(msg):
