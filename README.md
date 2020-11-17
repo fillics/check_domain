@@ -1,31 +1,26 @@
-# CheckDomain
+# CheckDomain [![](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/)
+Check out the availability of a list of domains.
 
-Quanto può essere lungo e noioso cercare se una serie di domini sono già stati presi? 
-Con questo script python il controllo risulta rapido ed efficiente, sfruttando un sito di domini, chiamato [GoDaddy](https://it.godaddy.com/) e le sue API.
-Tutto quello che devi fare è modificare il file [domains.txt](https://github.com/fillics/CheckDomain/blob/main/domains.txt), con la serie di domini che vuoi che lo script controlli e il gioco è fatto. Verrà creato un file con tutti quei domini che sono disponibili.
-<hr>
+## What is it?
+Do you want to know if a domain .com is available? With this script, you could find out the availability of a domain or a list of domains, saved in a JSON file or a text file.
 
-## Features
-* Possibilità di scegliere una lista di domini da un file .json (esempio: [animal.json](https://github.com/fillics/CheckDomain/blob/main/animals.json), array di nomi presi da questo [link](https://gist.github.com/borlaym/585e2e09dd6abd9b0d0a)) oppure da un file di testo (esempio: [domains.txt](https://github.com/fillics/CheckDomain/blob/main/domains.txt), che contiene migliaia di nomi generati casualmente, che possono essere modificati) che può modificare/creare l'utente.
-* Creazione di un file di testo con tutti i domini disponibili, direttamente nella cartella dello script .py.
-
-## Prerequisiti
-* Python (3 o superiore): installare [Python](https://www.python.org/downloads/windows/) e, se si è su Windows, aggiungerlo al PATH ([guida](https://datatofish.com/add-python-to-windows-path/)) 
-* Moduli [requests](https://pypi.org/project/requests/), json: scaricabili con ```pip install requests``` e ```pip install ijson```
+## Technologies
+This script is created with:
+* [Python](https://www.python.org/downloads/windows/), if you are using Windows, add it to the PATH ([guide](https://datatofish.com/add-python-to-windows-path/))  
+* [requests](https://pypi.org/project/requests/) and json modules. You can easily download with ```pip install requests``` and ```pip install ijson``` (if ijson does not work, use jsonlib)
 * [GoDaddy API Keys](https://developer.godaddy.com/keys)
 
-## Come funziona
-1) Registrarsi al sito di [GoDaddy API](https://developer.godaddy.com/) per creare le chiavi di accesso per lo script.
-
+## How does it work?
+1) Create a [GoDaddy](https://developer.godaddy.com/) account to get the API Keys needed.
 ![Immagine](https://user-images.githubusercontent.com/24494773/99223251-73936b80-27e4-11eb-9b17-930e354574e0.png)
+2) Insert them into the file [credentials.py](credentials.py).
+3) Edit the file [domains.txt](domains.txt) with the list of domains that you want to check out (don't add .com, but only write the name of the website).
+4) Run the script, using `python CheckDomain.py`, in the terminal.
+After that, the script asks you which file to open, with the command line: 
+``` choice = int(input("Text file [1] or Json file [2]? ")) ```
 
-2) Sostituire le chiavi ottenute nel file [credentials.py](https://github.com/fillics/CheckDomain/blob/main/credentials.py). 
-3) Modificare file _domains.txt_ con i domini che si vogliono controllare (non aggiungere il .com, ma semplicemente digitare il nome del sito. Esempio: _provadominio_ )
-4) Eseguire lo script con il comando, da terminale, `python CheckDomain.py`.
-A quel punto, il programma chiederà all'utente di inserire una preferenza riguardo al file da prendere in ingresso, con il comando ```choice = int(input("Text file [1] or Json file [2]? "))```.
-5)Dopo aver scelto, lo script eseguirà una **request get** dopo l'altra, attraverso il sito di GoDaddy API, per trovare il dominio che ha _True_ come attributo _available_ del response body della request.
-
-Se il dominio è disponibile, esso verrà stampato a video e verrà scritto su un file di testo, chiamato AvailableWebsites.txt, tramite il comando:
+5) The script opens the file and reads the domains' name and for each domain, it executes a **request get**, one by one, throught the GoDaddy API.
+6) If the domain is available, it will save in a text file, called AvailableWebsites.txt, with the command line: 
 
 ```
 f = open('AvailableWebsites.txt', 'w')
