@@ -6,7 +6,7 @@ Do you want to know if a domain .com is available? With this script, you can fin
 
 ## Telegram BOT
 I've also created a Telegram bot ([@CheckDomainAPI_bot](https://web.telegram.org/#/im?p=%40CheckDomainAPI_bot)) that does the same thing of [CheckDomain.py](CheckDomain.py) script. 
-You can send to it a JSON/txt file or just texting the domain to check it out.
+You can text to it the domain to check it out.
 
 ## Technologies
 This script is created with:
