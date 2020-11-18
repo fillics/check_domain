@@ -12,32 +12,15 @@ def handle(msg):
     if content_type == 'text':
         text = msg['text']
         if text == '/start':
-            bot.sendMessage(chat_id, "Hi! Send me a JSON/txt file that contains the list of domains or text me the domain to check out.")
+            bot.sendMessage(chat_id, "Hi! Text me the domain to check out.")
         else:
-        	text = text.casefold()
-        	bot.sendMessage(chat_id, "Searching "+ text + ".com ...")
-        	CheckDomain(text, chat_id)
+        	text = text.casefold().split('\n')
+        	for i in range(len(text)):
+        		bot.sendMessage(chat_id, "Searching "+ text[i] + ".com ...")
+        		CheckDomain(text[i], chat_id)
 
-    elif content_type == 'document':
-
-        documentName = msg['document']
-        filename = documentName['file_name']
-        mimetype = documentName['mime_type']
-
-        if mimetype == 'application/json':
-            filejson = open(filename)
-            data = json.load(filejson)
-            for name in data:
-                CheckDomain(name.lower(), chat_id)
-
-
-        elif mimetype == 'text/plain':
-            with open (filename, 'rt') as filetxt:
-                for name in filetxt:
-                    CheckDomain(name.lower().rstrip(), chat_id)
-
-        else:
-            bot.sendMessage(chat_id, "Unsupported file format")
+    else:
+        bot.sendMessage(chat_id, "Don't send me files, please...")
 
         	
 def CheckDomain(text, chat_id):
