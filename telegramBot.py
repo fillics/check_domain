@@ -1,8 +1,12 @@
-import sys, time, telepot, json
+from credentials import API_KEY, API_SECRET, TOKEN
+import sys, telepot, json
 from telepot.loop import MessageLoop
 from pprint import pprint
 import requests
-from credentials import API_KEY, API_SECRET, TOKEN
+import os, telebot
+from flask import Flask
+
+server = Flask(__name__)
 
 def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
@@ -42,13 +46,22 @@ def CheckDomain(text, chat_id):
 	else:
 		bot.sendMessage(chat_id, text+ ".com is not available!")
 
-	time.sleep(2)
-
 
 bot = telepot.Bot(TOKEN)
 MessageLoop(bot, handle).run_as_thread()
 print ('Listening ...')
 
-# Keep the program running.
-while 1:
-    time.sleep(10)
+# SERVER SIDE 
+@server.route('/' + TOKEN, methods=['POST'])
+def getMessage():
+   bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
+   return "!", 200
+
+@server.route("/")
+def webhook():
+   bot.remove_webhook()
+   bot.set_webhook(url='YOUR_HEROKU_APP_URL' + TOKEN)
+   return "!", 200
+
+if __name__ == "__main__":
+   server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
