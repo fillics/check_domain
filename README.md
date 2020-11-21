@@ -35,3 +35,4 @@ f.write(name+'.com is available\r\n')
 <hr>
 
 Sometimes GoDaddy API doesn't work and it says that a domain is avalaible when it's not and I don't know why.
+To check if the domain is available, click the link that the script sends to you.
