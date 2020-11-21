@@ -1,12 +1,10 @@
 from credentials import API_KEY, API_SECRET, TOKEN
-import sys, telepot, json
+import sys, telepot, json, time
 from telepot.loop import MessageLoop
 from pprint import pprint
 import requests
 import os, telebot
-from flask import Flask
 
-server = Flask(__name__)
 
 def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
@@ -17,6 +15,9 @@ def handle(msg):
         text = msg['text']
         if text == '/start':
             bot.sendMessage(chat_id, "Hi! Text me the domain to check out.")
+            bot.sendMessage(chat_id, "Don't write .com, but only the domain name. Thank you!")
+        elif text == '/help':
+            bot.sendMessage(chat_id, "Sometimes GoDaddy API doesn't work and it says that a domain is avalaible when it's not and I don't know why. To check if the domain is available, click the link that the script sends to you. Visit: https://github.com/fillics/CheckDomain if you need help")
         else:
         	text = text.casefold().split('\n')
         	for i in range(len(text)):
@@ -51,17 +52,5 @@ bot = telepot.Bot(TOKEN)
 MessageLoop(bot, handle).run_as_thread()
 print ('Listening ...')
 
-# SERVER SIDE 
-@server.route('/' + TOKEN, methods=['POST'])
-def getMessage():
-   bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
-   return "!", 200
-
-@server.route("/")
-def webhook():
-   bot.remove_webhook()
-   bot.set_webhook(url='YOUR_HEROKU_APP_URL' + TOKEN)
-   return "!", 200
-
-if __name__ == "__main__":
-   server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+while 1:
+  time.sleep(10)
